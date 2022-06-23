@@ -19,7 +19,7 @@
   "homepage": "https://github.com/JtheFox/sql-employee-tracker#readme",
   "dependencies": {
     "console.table": "^0.10.0",
-    "inquirer": "^9.0.0",
+    "inquirer": "^8.2.3",
     "mysql2": "^2.3.3"
   }
 }
