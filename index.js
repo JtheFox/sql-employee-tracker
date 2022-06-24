@@ -1,6 +1,6 @@
-const table = require('console.table');
 const prompts = require('./utils/prompts');
-const queries = require('./utils/queries')
+const queries = require('./utils/queries');
+require('console.table');
 
 async function main() {
     const choice = await prompts.menu();
