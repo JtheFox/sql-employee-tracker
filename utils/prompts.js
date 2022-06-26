@@ -8,10 +8,10 @@ exports.menu = async () => {
         choices: [
             { name: 'View All Departments', value: 'viewDepartments' },
             { name: 'Add Department', value: 'addDepartment' },
-            { name: 'View All Employees', value: 'viewEmployees' },
-            { name: 'Add Employee', value: 'addEmployee' },
             { name: 'View All Roles', value: 'viewRoles' },
             { name: 'Add Role', value: 'addRole' },
+            { name: 'View All Employees', value: 'viewEmployees' },
+            { name: 'Add Employee', value: 'addEmployee' },
             { name: 'Update Employee Role', value: 'updateEmployee' },
             { name: 'Quit', value: 'quit' }
         ]
