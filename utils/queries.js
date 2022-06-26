@@ -1,20 +1,18 @@
 const mysql = require ('mysql2');
+require('console.table');
 
-const db = mysql.createConnection(
-  {
+const db = mysql.createConnection({
     host: 'localhost',
-    // MySQL username,
     user: 'root',
-    // MySQL password
     password: 'password',
     database: 'employees_db'
-  },
-  console.log(`Connected to the employees_db database.`)
-);
+});
 
-exports.viewDepartments = async () => {
-    db.query('SELECT * FROM DEPARTMENTS', (err, result) => {
+exports.viewDepartments = () => {
+    db.query('SELECT * FROM departments', (err, result) => {
+        console.log('\n');
         if (err) console.error(err);
-        console.log(result);
+        console.table(result);
+        console.log('Use up or down to return to menu')
     });
 }
