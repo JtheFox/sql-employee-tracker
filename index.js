@@ -1,6 +1,5 @@
 const prompts = require('./utils/prompts');
 const queries = require('./utils/queries');
-require('console.table');
 
 async function main() {
     const choice = await prompts.menu();
@@ -10,7 +9,6 @@ async function main() {
         const addVal = await prompts[`${choice}`]();
         await queries[`${choice}`](addVal);
     }
-
     main();
 }
 
