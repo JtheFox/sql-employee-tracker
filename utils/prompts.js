@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const queries = require('./queries');
 
 exports.menu = async () => {
     const { menuSelect } = await inquirer.prompt({
@@ -25,5 +26,46 @@ exports.addDepartment = async () => {
         name: 'departmentName',
         message: 'What is the name of the department?'
     });
-    return departmentName;
+    queries.addDepartment(departmentName);
+    queries.viewDepartments;
+}
+
+exports.addRole = async () => {
+    const { roleTitle } = await inquirer.prompt({
+        type: 'input',
+        name: 'roleTitle',
+        message: 'What is the title of the role?'
+    });
+    const { roleSalary } = await inquirer.prompt({
+        type: 'input',
+        name: 'roleSalary',
+        message: 'What is the salary of the role?'
+    });
+    const { roleDepartment } = await inquirer.prompt({
+        type: 'input',
+        name: 'roleDepartment',
+        message: 'Which department is this role in?'
+    });
+
+    queries.getID('roles', roleDepartment);
+}
+
+exports.addEmployee = async () => {
+    const { departmentName } = await inquirer.prompt({
+        type: 'input',
+        name: 'departmentName',
+        message: 'What is the name of the department?'
+    });
+    queries.addDepartment(departmentName);
+    queries.viewDepartments;
+}
+
+exports.updateEmployee = async () => {
+    const { departmentName } = await inquirer.prompt({
+        type: 'input',
+        name: 'departmentName',
+        message: 'What is the name of the department?'
+    });
+    queries.addDepartment(departmentName);
+    queries.viewDepartments;
 }
